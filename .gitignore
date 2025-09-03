@@ -33,7 +33,9 @@ node_modules
 .vscode/
 *.sublime-project
 *.sublime-workspace
-
+output
+exports
+node_modules
 # Temporary files
 *.tmp
 *.temp
