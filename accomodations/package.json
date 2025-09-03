@@ -1,0 +1,42 @@
+{
+  "name": "estate-ai",
+  "version": "1.0.0",
+  "description": "Hotel search application using natural language processing",
+  "main": "src/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "start:mumbai": "node src/index.js --regions=Mumbai --limit=20",
+    "start:delhi": "node src/index.js --regions=Delhi --limit=20",
+    "start:all": "node src/index.js --regions=Mumbai,Delhi,Bangalore,Hyderabad,Chennai --limit=10",
+    "start:no-photos": "node src/index.js --no-photos",
+    "start:with-photos": "node src/index.js --regions=Mumbai --limit=10 --max-photos=5",
+    "start:high-quality-photos": "node src/index.js --regions=Goa --limit=5 --max-photos=10 --max-width=1200 --max-height=900",
+    "start:heritage-photos": "node src/index.js --regions=Rajasthan --types='heritage hotels,palace hotels' --limit=5 --max-photos=8 --max-width=1000",
+    "start:test-photos": "node src/index.js --regions=Mumbai --limit=3 --max-photos=3 --max-width=600 --max-height=400",
+    "test:csv": "node test-csv-structure.js",
+    "analyze:csv": "node examples/csv-analysis-example.js"
+  },
+  "keywords": [
+    "hotel",
+    "search",
+    "natural-language",
+    "google-places",
+    "aws-s3"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.511.0",
+    "@aws-sdk/lib-storage": "^3.511.0",
+    "axios": "^1.6.7",
+    "csv-writer": "^1.6.0",
+    "dotenv": "^16.4.1",
+    "node-fetch": "^3.3.2",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}
